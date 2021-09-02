@@ -1,3 +1,4 @@
+
 def min_max_matrix(row,col):
     matrix=[]
     countc=0
@@ -10,8 +11,14 @@ def min_max_matrix(row,col):
             countr += 1
             if countr == row-1:
                 matrix.append(r)
-                minimum.append(min(r))
                 countc += 1
-    return max(minimum), matrix
+    index = 0
+    while index < col:
+        els = []
+        for el in matrix:
+            els.append(el[index])
+        minimum.append(min(els))
+        index+=1
+    return max(minimum)
 
 print(min_max_matrix(2,2))
